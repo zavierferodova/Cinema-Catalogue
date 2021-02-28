@@ -1,0 +1,95 @@
+Unit Testing
+1. MovieViewModelTest
+   a. Memastikan data movie tidak null
+   b. Memastikan jumlah movie data sesuai yang diharapkan
+
+2. TvShowViewModelTest
+   a. Memastikan data tvshow tidak null
+   b. Memastikan jumlah tvshow data sesuai yang diharapkan
+
+3. DetailCinamaViewModelTest (Bisa digunakan untuk data movie ataupun tvshow)
+   a.Movie
+       - Memastikan movie title, release, runtime, status, genres, credits, overview, poster tidak null
+       - Memastikan movie title, release, runtime, status, genres, credits, overview, poster pada viewmodel memiliki isi yang sesuai dengan data generate dari Class CinemaDataGenerator
+   b. Favorite Movie
+       - Memastikan favorite movie id, title, release, overview, poster tidak null
+       - Memastikan favorite movie id, title, release, overview, poster memiliki data yang sesuai dengan data generate dari class CinemaDataGenerator
+   c. TvShow
+       - Memastikan tvshow title, release, runtime, status, genres, credits, overview, poster tidak null
+       - Memastikan tvshow title, release, runtime, status, genres, credits, overview, poster pada viewmodel memiliki isi yang sesuai dengan data generate dari Class CinemaDataGenerator
+   d. Favorite Movie
+       - Memastikan favorite movie id, title, release, overview, poster tidak null
+       - Memastikan favorite movie id, title, release, overview, poster memiliki data yang sesuai dengan data generate dari Class CinemaDataGenerator
+
+4. FavoriteMovieViewModelTest
+   a. Memastikan data favorite movie tidak null
+   b. Memastikan jumlah favorite movie data sesuai yang diharapkan
+
+5. FavoriteTvShowViewModelTest
+   a. Memastikan data favorite tvshow tidak null
+   b. Memastikan jumlah favorite tvshow data sesuai yang diharapkan
+
+Instrumented Testing
+1. MovieFragmentTest
+   a. Menampilkan data movie ke dalam recyclerview
+      - Memastikan rv_movies dalam keadaan tampil.
+      - Scroll rv_movies ke posisi data terakhir.
+   b. Membuka detail movie
+      - Memastikan rv_movies dalam keadaan tampil.
+      - Membuka salah satu movie item secara acak untuk menampilkan detail
+      - Memastikan detail_cinema_activity_container dalam keadaan tampil
+   c. Membuka TvShowFragment
+      - Memberi tindakan click pada navigation_tvshow untuk berpidah fragment
+      - Memastikan rv_tv_shows dalam keadaan tampil
+
+2. TvShowFragmentTest
+   a. Menampilkan data tvshow ke dalam recyclerview
+      - Memastikan rv_tv_shows dalam keadaan tampil.
+      - Scroll rv_tv_shows ke posisi data terakhir.
+   b. Membuka detail tvshow
+      - Memastikan rv_tv_shows dalam keadaan tampil.
+      - Membuka salah satu tvshow item secara acak untuk menampilkan detail
+      - Memastikan detail_cinema_activity_container dalam keadaan tampil
+   c. Membuka MovieFragment
+      - Memberi tindakan click pada navigation_movie untuk berpidah fragment
+      - Memastikan rv_movies dalam keadaan tampil
+
+3. DetailCinemaActivityTest
+   a. Movie
+      - Memastikan img_poster, tv_title, tv_release_date, tv_duration dalam keadaan tampil
+      - Melakukan scroll ke tv_status dan memasikan tv_status dalam keadaan tampil
+      - Swipe Up detail_cinema_activity_container
+      - Memastikan rv_genres_item dalam keadaan tampil
+      - Memastikan rv_credits_item dalam keadaan tampil
+
+   b. TvShow
+      - Memastikan img_poster, tv_title, tv_release_date, tv_duration dalam keadaan tampil
+      - Melakukan scroll ke tv_status dan memasikan tv_status dalam keadaan tampil
+      - Swipe Up detail_cinema_activity_container
+      - Memastikan rv_genres_item dalam keadaan tampil
+      - Memastikan rv_credits_item dalam keadaan tampil
+
+4. FavoriteCinemaFragmentTest
+   a. Movie
+      - Membuka discover movie fragment
+      - Memilih item movie pertama untuk melihat detail
+      - Melakukan click pada button favorite untuk menambahkan movie ke daftar favorite
+      - Melakukan click pada button back untuk keluar dari DetailCinemaActivity
+      - Melakukan click pada menu favorite pada bottom navigation
+      - Mengecek apakah rv_favorite_movies telah tampil
+      - Memilih item pertama untuk melihat detail movie
+      - Melakukan click pada button favorite untuk menghapus movie dari daftar favorite
+      - Melakukan click pada button back untuk keluar dari DetailCinemaActivity
+      - Mengecek apakah layout favorite_not_found_movie telah tampil
+   b. TvShow
+      - Membuka discover tvshow fragment
+      - Memilih item tvshow pertama untuk melihat detail
+      - Melakukan click pada button favorite untuk menambahkan tvshow ke daftar favorite
+      - Melakukan click pada button back untuk keluar dari DetailCinemaActivity
+      - Melakukan click pada menu favorite pada bottom navigation
+      - Melakukan swipe left untuk menuju ke fragment favorite tvshow
+      - Mengecek apakah rv_favorite_tv_shows telah tampil
+      - Memilih item pertama untuk melihat detail tvshow
+      - Melakukan click pada button favorite untuk menghapus tvshow dari daftar favorite
+      - Melakukan click pada button back untuk keluar dari DetailCinemaActivity
+      - Mengecek apakah layout favorite_not_found_tv_show telah tampil

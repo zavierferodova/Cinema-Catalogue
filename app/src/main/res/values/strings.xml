@@ -1,0 +1,38 @@
+<resources>
+    <string name="app_name">Cinema Catalogue</string>
+    <string name="title_movie">Movie</string>
+    <string name="title_tv_show">Tv Show</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="title">Title</string>
+    <string name="duration_format">0h 0m</string>
+    <string name="release_date_format">00–00–000</string>
+    <string name="release_date">Release Date</string>
+    <string name="duration">Duration</string>
+    <string name="director">Director</string>
+    <string name="minus_none">-</string>
+    <string name="overview">Overview</string>
+    <string name="category">Category</string>
+    <string name="categories">Categories</string>
+    <string name="status">Status</string>
+    <string name="name">Name</string>
+    <string name="credits_name">Credits Name</string>
+    <string name="character_name">Character Name</string>
+    <string name="credits">Credits</string>
+    <string name="favorite">Favorite</string>
+    <string name="minutes">minutes</string>
+    <string name="success_add_favorite">Sucess add to favorite</string>
+    <string name="success_remove_favorite">Sucess removed from favorite</string>
+    <string name="favorite_movie_empty">Favorite movie is empty</string>
+    <string name="favorite_tv_show_empty">Favorite tv show is empty</string>
+    <string name="loading">Loading</string>
+    <string name="not_found">Not Found</string>
+    <string name="connection_error">Connection Error</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="info">Info</string>
+    <string name="developer_name">Zavier Ferodova Al Fitroh</string>
+    <string name="developer_address">Surakarta, Indonesia</string>
+    <string name="address">Address</string>
+    <string name="webpage">Webpage</string>
+    <string name="developer_webpage">https://zavierferodova.github.io/</string>
+</resources>
