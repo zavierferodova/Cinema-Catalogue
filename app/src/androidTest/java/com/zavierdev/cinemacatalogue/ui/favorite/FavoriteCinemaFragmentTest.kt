@@ -53,6 +53,7 @@ class FavoriteCinemaFragmentTest {
         )
 
         // Action click favorite button and back button
+        Thread.sleep(2000)
         onView(withId(R.id.btn_favorite)).perform(click())
         onView(withId(R.id.btn_back)).perform(click())
 
@@ -67,6 +68,7 @@ class FavoriteCinemaFragmentTest {
                 click()
             )
         )
+        Thread.sleep(2000)
         onView(withId(R.id.btn_favorite)).perform(click())
 
         // Press back button and check favorite_not_found_movie layout is displayed
@@ -91,6 +93,7 @@ class FavoriteCinemaFragmentTest {
         )
 
         // Action click favorite button and back button
+        Thread.sleep(2000)
         onView(withId(R.id.btn_favorite)).perform(click())
         onView(withId(R.id.btn_back)).perform(click())
 
@@ -106,6 +109,7 @@ class FavoriteCinemaFragmentTest {
                 click()
             )
         )
+        Thread.sleep(2000)
         onView(withId(R.id.btn_favorite)).perform(click())
 
         // Press back button and check favorite_not_found_tv_show layout is displayed

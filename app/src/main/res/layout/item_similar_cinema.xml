@@ -30,7 +30,7 @@
                     android:layout_height="match_parent">
 
                     <ImageView
-                        android:id="@+id/img_poster"
+                        android:id="@+id/img_similar_poster"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:scaleType="fitXY"
@@ -44,7 +44,7 @@
             </com.google.android.material.card.MaterialCardView>
 
             <TextView
-                android:id="@+id/tv_title"
+                android:id="@+id/tv_similar_title"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="5dp"

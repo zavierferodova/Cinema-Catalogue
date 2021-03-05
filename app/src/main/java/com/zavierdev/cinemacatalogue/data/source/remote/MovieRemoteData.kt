@@ -4,6 +4,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.zavierdev.cinemacatalogue.data.source.remote.api.APIConfig
 import com.zavierdev.cinemacatalogue.data.source.remote.response.movie.*
+import com.zavierdev.cinemacatalogue.utils.EspressoIdlingResource
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.async
 import retrofit2.Call
@@ -24,6 +25,7 @@ class MovieRemoteData() {
         val resultDiscoverMovies = MutableLiveData<ApiResponse<List<MovieResultsItem>>>();
         val client = APIConfig.getApiService().getDiscoverMovies(APIConfig.API_KEY, APIConfig.LANG)
 
+        EspressoIdlingResource.increment()
         client.enqueue(object : Callback<MovieDiscoverResponse> {
             override fun onResponse(
                 call: Call<MovieDiscoverResponse>,
@@ -35,11 +37,13 @@ class MovieRemoteData() {
                     resultDiscoverMovies.value =
                         ApiResponse.error("Failed to get discovered movie data", listOf())
                 }
+                EspressoIdlingResource.decrement()
             }
 
             override fun onFailure(call: Call<MovieDiscoverResponse>, t: Throwable) {
                 resultDiscoverMovies.value =
                     ApiResponse.error("Failed to get discovered movie data", listOf())
+                EspressoIdlingResource.decrement()
             }
         })
 
@@ -50,6 +54,7 @@ class MovieRemoteData() {
         val resultDetailMovie = MutableLiveData<ApiResponse<MovieDetailResponse>>()
         val client = APIConfig.getApiService().getDetailMovie(id, APIConfig.API_KEY)
 
+        EspressoIdlingResource.increment()
         client.enqueue(object : Callback<MovieDetailResponse> {
             override fun onResponse(
                 call: Call<MovieDetailResponse>,
@@ -61,11 +66,13 @@ class MovieRemoteData() {
                     resultDetailMovie.value =
                         ApiResponse.error("Failed to get detail movie data", response.body()!!)
                 }
+                EspressoIdlingResource.decrement()
             }
 
             override fun onFailure(call: Call<MovieDetailResponse>, t: Throwable) {
                 resultDetailMovie.value =
                     ApiResponse.error("Failed to get detail movie data", MovieDetailResponse())
+                EspressoIdlingResource.decrement()
             }
         })
 
@@ -76,6 +83,7 @@ class MovieRemoteData() {
         val resultCreditsMovie = MutableLiveData<ApiResponse<MovieCreditsResponse>>()
         val client = APIConfig.getApiService().getCreditsMovie(id, APIConfig.API_KEY)
 
+        EspressoIdlingResource.increment()
         client.enqueue(object : Callback<MovieCreditsResponse> {
             override fun onResponse(
                 call: Call<MovieCreditsResponse>,
@@ -87,11 +95,13 @@ class MovieRemoteData() {
                     resultCreditsMovie.value =
                         ApiResponse.error("Failed to get credits movie data", response.body()!!)
                 }
+                EspressoIdlingResource.decrement()
             }
 
             override fun onFailure(call: Call<MovieCreditsResponse>, t: Throwable) {
                 resultCreditsMovie.value =
                     ApiResponse.error("Failed to get credits movie data", MovieCreditsResponse())
+                EspressoIdlingResource.decrement()
             }
         })
 
@@ -103,6 +113,7 @@ class MovieRemoteData() {
         val client =
             APIConfig.getApiService().getSimilarMovie(id, APIConfig.API_KEY, APIConfig.LANG)
 
+        EspressoIdlingResource.increment()
         client.enqueue(object : Callback<MovieSimilarResponse> {
             override fun onResponse(
                 call: Call<MovieSimilarResponse>,
@@ -113,11 +124,13 @@ class MovieRemoteData() {
                 } else {
                     resultSimilarMovies.value = ApiResponse.success(response.body()!!)
                 }
+                EspressoIdlingResource.decrement()
             }
 
             override fun onFailure(call: Call<MovieSimilarResponse>, t: Throwable) {
                 resultSimilarMovies.value =
                     ApiResponse.error("Failed to get similar movie data", MovieSimilarResponse())
+                EspressoIdlingResource.decrement()
             }
         })
 

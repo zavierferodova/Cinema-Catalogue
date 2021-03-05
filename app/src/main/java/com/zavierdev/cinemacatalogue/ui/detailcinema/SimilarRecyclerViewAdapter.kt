@@ -39,8 +39,8 @@ class SimilarRecyclerViewAdapter(private val cinemaType: CinemaType) :
                         RequestOptions.placeholderOf(R.drawable.bg_lightgray)
                             .error(R.drawable.bg_lightgray)
                     )
-                    .into(imgPoster)
-                tvTitle.text = cinema.title
+                    .into(imgSimilarPoster)
+                tvSimilarTitle.text = cinema.title
                 tvReleaseDate.text = cinema.release
             }
 
