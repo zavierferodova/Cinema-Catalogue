@@ -63,7 +63,7 @@ class TvShowFragmentTest {
                 ViewActions.click()
             )
         )
-        onView(ViewMatchers.withId(R.id.detail_movie_activity_container))
+        onView(ViewMatchers.withId(R.id.detail_tvshow_activity_container))
             .check(ViewAssertions.matches(ViewMatchers.isDisplayed()))
     }
 
