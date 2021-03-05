@@ -7,6 +7,7 @@ import com.zavierdev.cinemacatalogue.data.model.DiscoverCinemaModel
 import com.zavierdev.cinemacatalogue.data.source.MovieRepository
 import com.zavierdev.cinemacatalogue.data.test.CinemaDataGenerator
 import com.zavierdev.cinemacatalogue.ui.home.movie.MovieViewModel
+import com.zavierdev.cinemacatalogue.vo.Resource
 import junit.framework.TestCase.assertEquals
 import junit.framework.TestCase.assertNotNull
 import org.junit.Before
@@ -29,7 +30,7 @@ class MovieViewModelTest {
     private lateinit var movieRepository: MovieRepository
 
     @Mock
-    private lateinit var observer: Observer<ArrayList<DiscoverCinemaModel>>
+    private lateinit var observer: Observer<Resource<ArrayList<DiscoverCinemaModel>>>
 
     @Before
     fun setup() {
@@ -38,12 +39,12 @@ class MovieViewModelTest {
 
     @Test
     fun getDiscoverMovies() {
-        val dummyMovies = CinemaDataGenerator().getDiscoverSample()
-        val movies = MutableLiveData<ArrayList<DiscoverCinemaModel>>()
+        val dummyMovies = Resource.success(CinemaDataGenerator().getDiscoverSample())
+        val movies = MutableLiveData<Resource<ArrayList<DiscoverCinemaModel>>>()
         movies.value = dummyMovies
 
         `when`(movieRepository.getDiscoverMovie()).thenReturn(movies)
-        val movieDiscover = movieViewModel.getDiscoverMovie().value
+        val movieDiscover = movieViewModel.getDiscoverMovie().value?.data
         verify(movieRepository).getDiscoverMovie()
 
         assertNotNull(movieDiscover)

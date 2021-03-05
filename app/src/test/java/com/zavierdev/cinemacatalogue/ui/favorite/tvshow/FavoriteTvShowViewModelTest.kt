@@ -4,7 +4,7 @@ import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.Observer
 import androidx.paging.PagedList
-import com.zavierdev.cinemacatalogue.data.source.MovieRepository
+import com.zavierdev.cinemacatalogue.data.source.TvShowRepository
 import com.zavierdev.cinemacatalogue.data.source.local.entity.TvShowEntity
 import com.zavierdev.cinemacatalogue.ui.home.favorite.tvshow.FavoriteTvShowViewModel
 import junit.framework.Assert.assertEquals
@@ -26,7 +26,7 @@ class FavoriteTvShowViewModelTest {
     var instantTaskExecutorRule = InstantTaskExecutorRule()
 
     @Mock
-    private lateinit var movieRepository: MovieRepository
+    private lateinit var tvShowRepository: TvShowRepository
 
     @Mock
     private lateinit var pagedList: PagedList<TvShowEntity>
@@ -36,7 +36,7 @@ class FavoriteTvShowViewModelTest {
 
     @Before
     fun setup() {
-        favoriteTvShowViewModel = FavoriteTvShowViewModel(movieRepository)
+        favoriteTvShowViewModel = FavoriteTvShowViewModel(tvShowRepository)
     }
 
     @Test
@@ -46,9 +46,9 @@ class FavoriteTvShowViewModelTest {
         val tvShows = MutableLiveData<PagedList<TvShowEntity>>()
         tvShows.value = dummyFavoriteTvShow
 
-        `when`(movieRepository.getFavoriteTvShows()).thenReturn(tvShows)
+        `when`(tvShowRepository.getFavoriteTvShows()).thenReturn(tvShows)
         val favoriteTvShows = favoriteTvShowViewModel.getFavoriteTvShows().value
-        verify(movieRepository).getFavoriteTvShows()
+        verify(tvShowRepository).getFavoriteTvShows()
 
         favoriteTvShowViewModel.getFavoriteTvShows().observeForever(observer)
         verify(observer).onChanged(dummyFavoriteTvShow)
