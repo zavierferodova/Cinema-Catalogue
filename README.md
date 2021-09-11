@@ -4,4 +4,4 @@ Android aplication for get detail about movie and tvshow. Built using Jetpack Co
 
 ## Download
 
-[Application Link](https://drive.google.com/file/d/1sGftmqEERy--rvo5M8i-SgEhVTZkzVXj/view?usp=sharing)
+[Application Link](https://drive.google.com/drive/folders/17EKSYbcQIOC5HwmPMiJye_6iR7GS0OlF?usp=sharing)
