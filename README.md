@@ -1,6 +1,6 @@
 # Cinema Catalogue
 
-Android aplication for get detail about movie and tvshow. Built using Jetpack Components and Tested with Mockito Unit Test and Espresso Instrumentation Test.
+Android application for get detail about movie and tv show. Built using Jetpack Components and Tested with Mockito Unit Test and Espresso Instrumentation Test.
 
 ## Download
 
