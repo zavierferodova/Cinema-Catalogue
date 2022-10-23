@@ -16,17 +16,17 @@
         android:paddingBottom="30dp">
 
         <com.google.android.material.card.MaterialCardView
-            android:layout_width="300dp"
-            android:layout_height="400dp"
+            android:layout_width="250dp"
+            android:layout_height="250dp"
             android:layout_marginBottom="50dp"
             app:cardCornerRadius="20dp"
             app:cardElevation="0dp">
 
-            <ImageView
+            <de.hdodenhof.circleimageview.CircleImageView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:scaleType="centerCrop"
-                android:src="@drawable/developer_picture" />
+                android:src="@drawable/developer_logo" />
 
         </com.google.android.material.card.MaterialCardView>
 

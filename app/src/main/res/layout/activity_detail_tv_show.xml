@@ -61,7 +61,7 @@
                             <ImageView
                                 android:id="@+id/img_poster"
                                 android:layout_width="match_parent"
-                                android:layout_height="650dp"
+                                android:layout_height="600dp"
                                 android:scaleType="fitXY"
                                 tools:src="@tools:sample/backgrounds/scenic" />
 
